@@ -5,12 +5,10 @@
 using namespace std;
 
 int map[9][9];
-//int copy[9][9];
 int row[9][10]={0,};
 int col[9][10]={0,};
 int section[9][10]={0,};
 int blankNum=0;
-int findFlag=0;
 vector <pair<int, int> > blank;
 
 int checkSudoku(int x, int y, int num){
@@ -33,18 +31,13 @@ void printSudoku(){
 
 void solveSudoku(int depth){
 	if(depth==blankNum){
-		findFlag=1;
 		printSudoku();
-		return;
+		exit(0);
 	}
 	
 	for(int i=1;i<=9;i++){
-		if(findFlag==1) return;
-		
 		int x=blank[depth].first;
 		int y=blank[depth].second;
-		
-		//copy[x][y]=i;
 		
 		if(checkSudoku(x,y,i)==1){
 			map[x][y]=i;
@@ -65,7 +58,6 @@ int main(){
 	for(int i=0;i<9;i++){
 		for(int j=0;j<9;j++){
 			scanf("%1d",&map[i][j]);
-			//copy[i][j]=map[i][j];
 			row[i][map[i][j]]=1;
 			col[j][map[i][j]]=1;
 			section[i/3*3+j/3][map[i][j]]=1;
