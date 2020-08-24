@@ -8,7 +8,6 @@ typedef struct _Node{
 }node;
 
 node* textFile;
-node* start;
 
 void addNode(char text){
 	node* newOne=(node*)malloc(sizeof(node));
@@ -18,9 +17,6 @@ void addNode(char text){
 	newOne->next=textFile;
 	if(textFile->before!=NULL){
 		textFile->before->next=newOne;
-	}
-	else{
-		start=newOne;
 	}
 	textFile->before=newOne;
 }
