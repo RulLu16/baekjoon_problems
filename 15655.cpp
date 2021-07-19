@@ -20,7 +20,7 @@ void dfs(int depth, int pre){
 			continue;
 		}
 		if(visit[i]==0){
-			visit[i]=1;
+			//visit[i]=1;
 			list[depth]=num[i];
 			dfs(depth+1, num[i]);
 			visit[i]=0;

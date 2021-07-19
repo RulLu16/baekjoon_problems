@@ -29,7 +29,7 @@ int main(){
 		if(temp[0]>='0' && temp[0]<='9'){
 			int key=atoi(temp);
 			std::map<int, string>::iterator it=findByNum.find(key);
-			// iterator°¡ Á¤È®È÷ ¹¹Â¡.. 
+			// iterator°¡ Á¤È®È÷ ¹¹Â¡..
 			string print=it->second;
 			printf("%s\n",print.c_str());
 		}

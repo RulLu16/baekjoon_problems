@@ -11,7 +11,7 @@ vector <int> num;
 vector <int> list(8);
 vector <int> visit(8);
 
-void dfs(int depth){
+void dfs(int depth, int idx){
 	int pre=-1;
 	
 	if(depth==m){
@@ -23,11 +23,14 @@ void dfs(int depth){
 	}
 	
 	for(int i=0;i<n;i++){
-		if(visit[i]==0 && (i==0 || pre!=num[i])){
+		if(idx>num[i]){
+			continue;
+		}
+		if(i==0 || pre!=num[i]){
 			visit[i]=1;
 			pre=num[i];
 			list[depth]=num[i];
-			dfs(depth+1);
+			dfs(depth+1, num[i]);
 			visit[i]=0;						
 		}
 	}
@@ -45,5 +48,5 @@ int main(){
 	
 	sort(num.begin(),num.end());
 	
-	dfs(0);
+	dfs(0, 0);
 }

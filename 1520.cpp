@@ -7,9 +7,11 @@ using namespace std;
 
 int n, m;
 long long result=0;
+
 int map[501][501];
 int visit[501][501]={0,};
 long long dp[501][501]={0,};
+
 int moveX[4]={0,1,0,-1};
 int moveY[4]={1,0,-1,0};
 
