@@ -39,7 +39,7 @@ int main(){
 					break;
 				}
 				same++;
-			}
+			} 
 			num += same + 1;
 			idx = idx - same - 1;
 		}
